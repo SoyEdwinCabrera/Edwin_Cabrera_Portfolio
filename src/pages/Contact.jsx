@@ -5,6 +5,24 @@ import { Html } from '@react-three/drei';
 
 import Loader from '/src/components/Loader.jsx';
 import Fox from '../models/Fox';
+import useAlert from '../hooks/useAlert';
+import Alert from '../components/Alert';
+
+const ResponsiveFox = ({ currentAnimation }) => {
+  const { viewport } = useThree();
+  
+  // Calcula una escala dinámica basada en el viewport
+  const calculatedScale = Math.min(0.5, viewport.width / 15);
+  
+  return (
+    <Fox
+      currentAnimation={currentAnimation}
+      position={[0.5, 0.35, 0]}
+      rotation={[12.6, -0.7, 0]}
+      scale={[calculatedScale, calculatedScale, calculatedScale]}
+    />
+  );
+};
 
 const Contact = () => {
   const formRef = useRef();
@@ -12,6 +30,8 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState('idle');
 
+  const { alert, showAlert, hideAlert } = useAlert();
+  
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -29,26 +49,28 @@ const Contact = () => {
         from_name: form.name,
         to_name: "Edwin",
         from_email: form.email,
-        to_email: "edwinleeroth.com",
+        to_email: "soyedwincabrera@hotmail.com",
         message: form.message
       },
       import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
     ).then(() => {
       setIsLoading(false);
       //TODO: Show success message
+      showAlert({text: 'Message sent succesfully!', type: 'success' });
       //TODO: Hide an alert
 
       setTimeout(() => {
-        setCurrentAnimation('idle')
-        
+        hideAlert();
+        setCurrentAnimation('idle')        
         setForm({ name: '', email: '', message: '' });
-      }, [3000])
+      }, 3000)
       
     }).catch((error) => {
       setIsLoading(false);
       setCurrentAnimation('idle')
       console.log(error);
       //TODO: Show error message
+      showAlert({ text: "I didn't receive your message", type: 'danger' });
     })
   };
 
@@ -57,10 +79,13 @@ const Contact = () => {
   
   return (
     <section className="relative flex lg:flex-row flex-col max-container">
+      {alert.show && < Alert {...alert} />}
+      
       <div className="flex-1 min-w-[50%] flex flex-col">
         <h1 className="head-text">Get in Touch</h1>
 
         <form
+          ref={formRef}
           className="w-full flex flex-col gap-7 mt-14"
           onSubmit={handleSubmit}
         >
@@ -117,7 +142,8 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
+      
+      <div className='lg:w-2/3 w-full lg:h-auto md:h-[700px] h-[400px]'>
         <Canvas
           camera={{
             position: [0, 0, 5],
@@ -126,31 +152,26 @@ const Contact = () => {
             far: 1000
           }}
         >
-          <directionalLight intensity={2.5} position={[0, 0, 1]} />
-          <ambientLight intensity={0.5} />
+          <directionalLight position={[0, 0, 1]} intensity={2.5} />
+          <ambientLight intensity={1} />
+          <pointLight position={[5, 10, 0]} intensity={2} />
+          <spotLight
+            position={[10, 10, 10]}
+            angle={0.15}
+            penumbra={1}
+            intensity={2}
+          />
           <Suspense fallback={<Loader />}>
+                        
             <Fox
               currentAnimation={currentAnimation}
               position={[0.5, 0.35, 0]}
-              rotation={[12.6, -0.6, 0]}
+              rotation={[12.6, -0.5, 0]}
               scale={[0.5, 0.5, 0.5]}
             />
           </Suspense>
         </Canvas>
       </div>
-      {/* <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
-        <Canvas camera={{
-          position: [0, 0, 5]
-        }}>
-          <Suspense fallback={<Loader/>}>
-            <Fox
-            position={[0.5, 0.35, 0]}
-            rotation={[12, 0, 0]}
-            scale={[0.5, 0.5, 0.5]}
-            />
-          </Suspense>
-        </Canvas>
-      </div> */}
     </section>
   )
 };

@@ -1,6 +1,6 @@
 import React, { useState, useRef, Suspense } from 'react';
 import emailjs, { sendForm } from '@emailjs/browser';
-import {Canvas} from '@react-three/fiber';
+import {Canvas, useThree} from '@react-three/fiber';
 import { Html } from '@react-three/drei';
 
 import Loader from '/src/components/Loader.jsx';
@@ -12,12 +12,12 @@ const ResponsiveFox = ({ currentAnimation }) => {
   const { viewport } = useThree();
   
   // Calcula una escala dinámica basada en el viewport
-  const calculatedScale = Math.min(0.5, viewport.width / 15);
+  const calculatedScale = Math.min(0.5, viewport.width / 12);
   
   return (
     <Fox
       currentAnimation={currentAnimation}
-      position={[0.5, 0.35, 0]}
+      position={[0.5, 0.4, 0]}
       rotation={[12.6, -0.7, 0]}
       scale={[calculatedScale, calculatedScale, calculatedScale]}
     />
@@ -143,7 +143,7 @@ const Contact = () => {
         </form>
       </div>
       
-      <div className='lg:w-2/3 w-full lg:h-auto md:h-[700px] h-[400px]'>
+      <div className='lg:w-3/2 w-full lg:h-auto md:h-[700px] h-[400px]'>
         <Canvas
           camera={{
             position: [0, 0, 5],
@@ -161,11 +161,10 @@ const Contact = () => {
             penumbra={1}
             intensity={2}
           />
-          <Suspense fallback={<Loader />}>
-                        
+          <Suspense fallback={<Loader />}>                        
             <Fox
               currentAnimation={currentAnimation}
-              position={[0.5, 0.35, 0]}
+              position={[0.2, 0.4, 0.5]}
               rotation={[12.6, -0.5, 0]}
               scale={[0.5, 0.5, 0.5]}
             />

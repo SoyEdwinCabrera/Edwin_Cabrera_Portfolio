@@ -1,5 +1,5 @@
 import React, { useState, useRef, Suspense } from 'react';
-import emailjs, { sendForm } from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import {Canvas, useThree} from '@react-three/fiber';
 import { Html } from '@react-three/drei';
 
@@ -12,13 +12,13 @@ const ResponsiveFox = ({ currentAnimation }) => {
   const { viewport } = useThree();
   
   // Calcula una escala dinámica basada en el viewport
-  const calculatedScale = Math.min(0.5, viewport.width / 12);
+  const calculatedScale = Math.min(0.5, viewport.width / 10);
   
   return (
     <Fox
       currentAnimation={currentAnimation}
-      position={[0.5, 0.4, 0]}
-      rotation={[12.6, -0.7, 0]}
+      position={[0.2, 0.9, 0.5]}
+      rotation={[12.8, -0.6, 0]}
       scale={[calculatedScale, calculatedScale, calculatedScale]}
     />
   );
@@ -39,7 +39,20 @@ const Contact = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    // Validación básica
+      if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+        showAlert({ text: "All fields are required", type: 'danger' });
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(form.email)) {
+        showAlert({ text: "Please enter a valid email address", type: 'danger' });
+        return;
+      }
+      
+      setIsLoading(true);
     setCurrentAnimation('hit');
 
     emailjs.send(
@@ -143,7 +156,7 @@ const Contact = () => {
         </form>
       </div>
       
-      <div className='lg:w-3/2 w-full lg:h-auto md:h-[700px] h-[400px]'>
+      <div className='lg:w-2/3 w-full lg:h-auto md:h-[550px] h-[350px]'>
         <Canvas
           camera={{
             position: [0, 0, 5],
@@ -161,14 +174,17 @@ const Contact = () => {
             penumbra={1}
             intensity={2}
           />
-          <Suspense fallback={<Loader />}>                        
+          <Suspense fallback={<Loader />}>
+            <ResponsiveFox currentAnimation={currentAnimation} />
+          </Suspense>
+          {/* <Suspense fallback={<Loader />}>                        
             <Fox
               currentAnimation={currentAnimation}
               position={[0.2, 0.4, 0.5]}
               rotation={[12.6, -0.5, 0]}
               scale={[0.5, 0.5, 0.5]}
             />
-          </Suspense>
+          </Suspense> */}
         </Canvas>
       </div>
     </section>

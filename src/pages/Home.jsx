@@ -8,6 +8,9 @@ import Bird from '../models/Bird';
 import Plane from '../models/Plane';
 import HomeInfo from '../components/HomeInfo';
 
+import sakura from '../assets/sakura.mp3'
+import { soundoff, soundon } from '../assets/icons';
+
 // Componente para el mensaje de instrucción
 const SwipeInstruction = ({ isVisible, isRotating }) => {
   // Determinar el mensaje según el tipo de dispositivo y la acción
@@ -44,11 +47,25 @@ const SwipeInstruction = ({ isVisible, isRotating }) => {
 };
 
 const Home = () => {
+  const audioRef = useRef(new Audio(sakura));
+  audioRef.current.volume = 0.2;
+  audioRef.current.loop = true;
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(1);
   const [showInstruction, setShowInstruction] = useState(true);
   const instructionTimerRef = useRef(null);
   const lastInteractionRef = useRef(Date.now());
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+  
+  useEffect(() =>{
+    if(isPlayingMusic){
+      audioRef.current.play();
+    }
+    
+    return ()=>{
+      audioRef.current.pause();
+    }
+  }, [isPlayingMusic])
 
   // Función para gestionar la visualización del mensaje
   const handleInstructionVisibility = () => {
@@ -172,6 +189,14 @@ const Home = () => {
           />
         </Suspense>
       </Canvas>
+      <div className='absolute bottom-2 left-2'>
+        <img 
+        src={!isPlayingMusic? soundoff: soundon}
+        alt='sound'
+        className='w-10 h-10 cursor-pointer object-contain'
+        onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+        />
+      </div>
     </section>
   )
 };

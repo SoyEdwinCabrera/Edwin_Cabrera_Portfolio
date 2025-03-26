@@ -26,8 +26,38 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import lcl from './lcl.png'
+import r from './R.png'
+import chronicle from './chronicle.svg'
+import illustrator from './illustrator.svg'
+import java from './java.svg'
+import jira from './jira.svg'
+import junit from './junit.svg'
+import mysql from './mysql.svg'
+import numpy from './numpy.svg'
+import pandas from './pandas.png'
+import python from './python.png'
+import seaborn from './seaborn.png'
+import selenium from './selenium.png'
+import splunk from './splunk.png'
+import tableau from './tableau.png'
+
 
 export {
+    tableau,
+    splunk,
+    selenium,
+    seaborn,
+    python,
+    pandas,
+    numpy,
+    mysql,
+    junit,
+    jira,
+    java,
+    illustrator,
+    chronicle,
+    lcl,
     css,
     express,
     git,
@@ -55,5 +85,6 @@ export {
     arrow,
     contact,
     soundon,
-    soundoff
+    soundoff,
+    r
 }

@@ -10,21 +10,21 @@ const About = () => {
       <h1 className='head-text'>Hello, I'm <span className='blue-gradient_text font-semibold drop-shadow'>Edwin</span></h1>
       
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
-        <p> Beginner in IT industry based in Colombia, with technical education through hands-on learning</p>
+        <p> Beginner in the IT industry based in Colombia, with a technical foundation gained through hands-on learning.</p>
       </div>
       
       <div className='py-10 flex flex-col'>
         <h3 className='subhead-text'>My Skills</h3>
         
         <div className='mt-16 flex flex-wrap gap-12'>
-          {skills.map((skill)=>(
-            <div className='block-container w-20 h-20'>
+          {skills.map((skill, index) => (
+            <div className='block-container w-20 h-20' key={`skill-${index}`}>
               <div className='btn-back rounded-xl'/>
               <div className='btn-front rounded-xl flex justify-center items-center'>
                 <img
                   src={skill.imageUrl}
                   alt={skill.name}
-                  className='w-1/2 h1-1/2 object-contain'
+                  className='w-1/2 h-1/2 object-contain'
                 />
               </div>
             </div>           
@@ -33,10 +33,9 @@ const About = () => {
       </div>
       
       <div className='py-16'>
-        <h3 className='subhead-text'>Work Experience</h3>
+        <h3 className='subhead-text'>Education</h3>
         <div className='mt-5 flex flex-col gap-3 text-slate-500'>
-        <p> I've worked with all sorts of companies, leveling up my skills and 
-          teaming up with smart people. Here's the rundown:</p>
+        <p> My learning journey has been focused on acquiring practical skills through taking courses, reading books, following tutorials, and attending tech events. Here's a summary:</p>
         </div>
         
         <div className='mt=12 flex'>

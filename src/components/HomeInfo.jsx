@@ -25,26 +25,26 @@ const renderContent = {
     <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
       Hi, I am <span className="font-semibold">Edwin</span>👋🏻
       <br />
-      I am a Data Analyst from Colombia
+       from Colombia
     </h1>
   ),
   2: (
     <InfoBox
-      text="Worked with many companies and picked up many skills along the way"
-      link="/projects"
+      text="Over the past year, I have acquired programming skills to break into the tech industry."
+      link="/about"
       btnText="Learn more"
     />
   ),
   3: (
     <InfoBox
-      text="Led multiple projects to success over the years. Curious about the impact?"
-      link="/about"
+      text="Although inexperienced, I have built projects to apply my new knowledge."
+      link="/projects"
       btnText="Visit my portfolio"
     />
   ),
   4: (
     <InfoBox
-      text="Need a project done or looking for a dev? I'm just a few keystrokes away"
+      text="Would you be interested in working with me? I'm always open to new opportunities."
       link="/contact"
       btnText="Let's talk"
     />

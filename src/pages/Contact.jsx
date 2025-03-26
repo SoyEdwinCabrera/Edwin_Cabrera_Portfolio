@@ -17,7 +17,7 @@ const ResponsiveFox = ({ currentAnimation }) => {
   return (
     <Fox
       currentAnimation={currentAnimation}
-      position={[0.2, 0.9, 0.5]}
+      position={[0.2, 0.5, 0.5]}
       rotation={[12.8, -0.6, 0]}
       scale={[calculatedScale, calculatedScale, calculatedScale]}
     />

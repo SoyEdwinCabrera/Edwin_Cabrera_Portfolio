@@ -39,14 +39,14 @@ export const skills = [
         type: "Version Control",
     },
     {
-        imageUrl: python,
-        name: "Python",
-        type: "Develop",
-    },
-    {
         imageUrl: r,
         name: "R",
         type: "Analysis",
+    },
+    {
+        imageUrl: python,
+        name: "Python",
+        type: "Develop",
     },
     {
         imageUrl: pandas,

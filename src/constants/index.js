@@ -218,45 +218,45 @@ export const socialLinks = [
 
 export const projects = [
     {
-        iconUrl: pricewise,
+        iconUrl: summiz,
         theme: 'btn-back-red',
-        name: 'QA AUTOMATION',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
-    },
-    {
-        iconUrl: threads,
-        theme: 'btn-back-green',
-        name: 'HTB BADGES',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
-    },
-    {
-        iconUrl: car, 
-        theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+        name: 'QA automation',
+        description: 'Developed an automation project using Java and Selenium to streamline web testing processes, applying my acquired skills to enhance efficiency and accuracy in automated tasks.',
+        link: 'https://github.com/SoyEdwinCabrera/Automation-Project',
     },
     {
         iconUrl: snapgram,
-        theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
+        theme: 'btn-back-green',
+        name: 'HTB BADGES',
+        description: 'I am actively solving cybersecurity challenges on Hack The Box, developing penetration testing skills, enhancing problem-solving abilities, and earning badges that showcase my progress.',
+        link: 'https://new.express.adobe.com/webpage/vUL5nRGqQAXBC',
     },
-    {
-        iconUrl: estate,
-        theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
-    },
-    {
-        iconUrl: summiz,
-        theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
-    }
+    // {
+    //     iconUrl: car, 
+    //     theme: 'btn-back-blue',
+    //     name: 'Car Finding App',
+    //     description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
+    //     link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+    // },
+    // {
+    //     iconUrl: snapgram,
+    //     theme: 'btn-back-pink',
+    //     name: 'Full Stack Instagram Clone',
+    //     description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
+    //     link: 'https://github.com/adrianhajdin/social_media_app',
+    // },
+    // {
+    //     iconUrl: estate,
+    //     theme: 'btn-back-black',
+    //     name: 'Real-Estate Application',
+    //     description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
+    //     link: 'https://github.com/adrianhajdin/projects_realestate',
+    // },
+    // {
+    //     iconUrl: summiz,
+    //     theme: 'btn-back-yellow',
+    //     name: 'AI Summarizer Application',
+    //     description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
+    //     link: 'https://github.com/adrianhajdin/project_ai_summarizer',
+    // }
 ];

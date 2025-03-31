@@ -229,7 +229,8 @@ export const projects = [
         theme: 'btn-back-green',
         name: 'HTB BADGES',
         description: 'I am actively solving cybersecurity challenges on Hack The Box, developing penetration testing skills, enhancing problem-solving abilities, and earning badges that showcase my progress.',
-        link: 'https://new.express.adobe.com/webpage/vUL5nRGqQAXBC',
+        // link: 'https://new.express.adobe.com/webpage/vUL5nRGqQAXBC',
+        link: 'https://new.express.adobe.com/webpage/C6Swdj3Iki2hU',
     },
     // {
     //     iconUrl: car, 

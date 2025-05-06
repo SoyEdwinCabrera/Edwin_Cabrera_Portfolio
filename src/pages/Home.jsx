@@ -37,7 +37,7 @@ const SwipeInstruction = ({ isVisible, isRotating }) => {
   if (!isVisible) return null;
   
   return (
-    <div className={`instruction absolute bottom-10 left-0 right-0 flex items-center justify-center z-20 pointer-events-none transition-opacity duration-500 ${isRotating ? 'opacity-0' : 'opacity-100 animate-pulse'}`}>
+    <div className={`instruction absolute bottom-12 left-0 right-0 flex items-center justify-center z-20 pointer-events-none transition-opacity duration-500 ${isRotating ? 'opacity-0' : 'opacity-100 animate-pulse'}`}>
       <div className="bg-black bg-opacity-50 text-white px-4 py-2 rounded-full flex items-center">
         {icon}
         <span>{message}</span>

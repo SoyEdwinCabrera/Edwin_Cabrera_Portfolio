@@ -17,7 +17,7 @@ import React from 'react';
      bottom: 0,
      width: '100%',
      fontFamily: 'Poppins, sans-serif',
-     fontSize: '16px',
+     fontSize: '14px',
    };
 
    export default Footer;

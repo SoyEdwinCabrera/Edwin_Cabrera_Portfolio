@@ -232,6 +232,13 @@ export const projects = [
         // link: 'https://new.express.adobe.com/webpage/vUL5nRGqQAXBC',
         link: 'https://new.express.adobe.com/webpage/C6Swdj3Iki2hU',
     },
+    {
+        iconUrl: estate,
+        theme: 'btn-back-blue',
+        name: 'WebDriverIO',
+        description: 'This project contains automated test scripts for a mobile application using WebDriverIO and Appium. The tests are written in Java and leverage JUnit 5 for test management.',
+        link: 'https://github.com/SoyEdwinCabrera/WebDriverIO.git',
+    },
     // {
     //     iconUrl: car, 
     //     theme: 'btn-back-blue',

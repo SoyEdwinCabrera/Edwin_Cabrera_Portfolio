@@ -220,7 +220,7 @@ export const projects = [
     {
         iconUrl: summiz,
         theme: 'btn-back-red',
-        name: 'QA automation',
+        name: 'Selenium',
         description: 'Developed an automation project using Java and Selenium to streamline web testing processes, applying my acquired skills to enhance efficiency and accuracy in automated tasks.',
         link: 'https://github.com/SoyEdwinCabrera/Automation-Project',
     },
@@ -233,11 +233,18 @@ export const projects = [
         link: 'https://new.express.adobe.com/webpage/C6Swdj3Iki2hU',
     },
     {
-        iconUrl: estate,
+        iconUrl: snapgram,
         theme: 'btn-back-blue',
         name: 'WebDriverIO',
         description: 'This project contains automated test scripts for a mobile application using WebDriverIO and Appium. The tests are written in Java and leverage JUnit 5 for test management.',
         link: 'https://github.com/SoyEdwinCabrera/WebDriverIO.git',
+    },
+    {
+        iconUrl: estate,
+        theme: 'btn-back-yellow',
+        name: 'Cypress',
+        description: 'The project consists of a collection of automated tests for a web application, developed with Cypress and written in JavaScript, using Mocha as a testing framework.',
+        link: 'https://github.com/SoyEdwinCabrera/cypress.git',
     },
     // {
     //     iconUrl: car, 
